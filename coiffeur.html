@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Art du Style | Coiffure & Élégance</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'salon-black': '#1a1a1a',
+                        'salon-dark': '#333333',
+                        'salon-gold': '#D4AF37',
+                        'salon-gold-hover': '#b5952f',
+                        'salon-light': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        'sans': ['Lato', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for images */
+        .bg-overlay {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+        }
+    </style>
+</head>
+<body class="font-sans text-salon-dark antialiased bg-white selection:bg-salon-gold selection:text-white">
+
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold tracking-widest text-salon-black">
+                L'ART <span class="text-salon-gold">DU</span> STYLE
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-sm font-bold uppercase tracking-wide hover:text-salon-gold transition-colors">Accueil</a>
+                <a href="#about" class="text-sm font-bold uppercase tracking-wide hover:text-salon-gold transition-colors">Le Salon</a>
+                <a href="#services" class="text-sm font-bold uppercase tracking-wide hover:text-salon-gold transition-colors">Services</a>
+                <a href="#gallery" class="text-sm font-bold uppercase tracking-wide hover:text-salon-gold transition-colors">Galerie</a>
+                <a href="#contact" class="px-6 py-2 bg-salon-black text-white text-sm font-bold uppercase tracking-wider hover:bg-salon-gold transition-colors duration-300">
+                    Prendre RDV
+                </a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-salon-black focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#home" class="mobile-link text-salon-black font-bold uppercase">Accueil</a>
+                <a href="#about" class="mobile-link text-salon-black font-bold uppercase">Le Salon</a>
+                <a href="#services" class="mobile-link text-salon-black font-bold uppercase">Services</a>
+                <a href="#gallery" class="mobile-link text-salon-black font-bold uppercase">Galerie</a>
+                <a href="#contact" class="text-salon-gold font-bold uppercase">Prendre RDV</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Salon Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <p class="text-salon-gold uppercase tracking-[0.2em] mb-4 text-sm md:text-base font-bold">Excellence & Tradition</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+                Révélez votre <br/><span class="italic text-salon-gold">Élégance</span>
+            </h1>
+            <p class="text-gray-200 mb-10 max-w-lg mx-auto text-lg font-light">
+                Une expérience de coiffure unique au cœur de la ville. Coupe, soin et barbe par des artisans passionnés.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="px-8 py-4 bg-salon-gold text-white font-bold uppercase tracking-widest hover:bg-white hover:text-salon-black transition-all duration-300">
+                    Réserver
+                </a>
+                <a href="#services" class="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-salon-black transition-all duration-300">
+                    Nos Tarifs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1521590832169-dca14f3316c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Barber working" class="w-full h-[500px] object-cover shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-salon-gold w-32 h-32 -z-10 hidden md:block"></div>
+                    <div class="absolute -top-6 -left-6 border-2 border-salon-dark w-full h-full -z-10 hidden md:block"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-salon-gold uppercase tracking-widest font-bold text-sm mb-2">Notre Histoire</h4>
+                    <h2 class="text-4xl font-serif font-bold text-salon-black mb-6">L'Art de la Coupe <br>depuis 2015</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Chez L'Art du Style, nous croyons que votre coiffure est le reflet de votre personnalité. Fondé par des artisans passionnés, notre salon allie techniques traditionnelles et tendances modernes.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Nous utilisons exclusivement des produits haut de gamme pour garantir la santé de vos cheveux et de votre barbe. Installez-vous, détendez-vous, et laissez nos experts s'occuper de vous.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder" class="w-12 h-12 rounded-full grayscale">
+                        <div>
+                            <p class="font-serif font-bold text-lg">Antoine Dupont</p>
+                            <p class="text-sm text-gray-500">Fondateur & Maître Coiffeur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-salon-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-salon-gold uppercase tracking-widest font-bold text-sm mb-2">Prestations</h4>
+                <h2 class="text-4xl font-serif font-bold text-salon-black">Menu des Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Coupe Classique</h3>
+                        <p class="text-sm text-gray-500 mt-1">Shampoing, coupe ciseaux/tondeuse, coiffage</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">25€</span>
+                </div>
+
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Taille de Barbe</h3>
+                        <p class="text-sm text-gray-500 mt-1">Rituel serviette chaude, taille, huile</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">20€</span>
+                </div>
+
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Le Complet</h3>
+                        <p class="text-sm text-gray-500 mt-1">Coupe cheveux + Taille de barbe premium</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">40€</span>
+                </div>
+
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Coupe Enfant</h3>
+                        <p class="text-sm text-gray-500 mt-1">Pour les moins de 12 ans</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">18€</span>
+                </div>
+
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Rasage à l'Ancienne</h3>
+                        <p class="text-sm text-gray-500 mt-1">Coupe chou, serviette chaude, soin après-rasage</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">30€</span>
+                </div>
+
+                <div class="flex justify-between items-end border-b border-gray-300 pb-2">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-salon-dark">Soin Capillaire</h3>
+                        <p class="text-sm text-gray-500 mt-1">Masque revitalisant et massage crânien</p>
+                    </div>
+                    <span class="font-bold text-salon-gold text-xl">15€</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-salon-gold uppercase tracking-widest font-bold text-sm mb-2">Portfolio</h4>
+                <h2 class="text-4xl font-serif font-bold text-salon-black">Nos Réalisations</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 1">
+                </div>
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1599351431202-6e0c03e7d746?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 2">
+                </div>
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb7135952?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 3">
+                </div>
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 4">
+                </div>
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1593702295094-aea8c5c13589?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 5">
+                </div>
+                <div class="overflow-hidden group cursor-pointer h-64">
+                    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed8ad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-salon-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <i class="fas fa-quote-left text-salon-gold text-4xl mb-4"></i>
+                <h2 class="text-4xl font-serif font-bold">Avis Clients</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-[#444] p-8 rounded-sm shadow-lg">
+                    <div class="flex text-salon-gold mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic font-light mb-6">"Le meilleur salon de la ville. L'ambiance est incroyable et le service est impeccable. Merci à Antoine pour la coupe parfaite."</p>
+                    <p class="font-serif font-bold">- Thomas L.</p>
+                </div>
+                <div class="bg-[#444] p-8 rounded-sm shadow-lg">
+                    <div class="flex text-salon-gold mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic font-light mb-6">"Un vrai moment de détente. La taille de barbe à l'ancienne est un must. Je recommande vivement."</p>
+                    <p class="font-serif font-bold">- Marc A.</p>
+                </div>
+                <div class="bg-[#444] p-8 rounded-sm shadow-lg">
+                    <div class="flex text-salon-gold mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="italic font-light mb-6">"Équipe professionnelle et à l'écoute. J'y vais depuis 2 ans et je n'ai jamais été déçu."</p>
+                    <p class="font-serif font-bold">- Julien R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-salon-black text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <div>
+                    <h3 class="font-serif text-2xl font-bold mb-6 text-white">L'Art du Style</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt text-salon-gold mt-1 w-6"></i> 12 Rue de la République, 75001 Paris</li>
+                        <li class="flex items-center"><i class="fas fa-phone text-salon-gold w-6"></i> 01 23 45 67 89</li>
+                        <li class="flex items-center"><i class="fas fa-envelope text-salon-gold w-6"></i> contact@lartdustyle.fr</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-xl font-bold mb-6 text-white">Horaires d'Ouverture</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between"><span>Lundi - Vendredi</span> <span>10h00 - 19h30</span></li>
+                        <li class="flex justify-between"><span>Samedi</span> <span>09h00 - 18h00</span></li>
+                        <li class="flex justify-between text-salon-gold"><span>Dimanche</span> <span>Fermé</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-xl font-bold mb-6 text-white">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-salon-gold hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-salon-gold hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-salon-gold hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 L'Art du Style. Tous droits réservés. Design par IA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const navbar = document.getElementById('navbar');
+
+        // Toggle Mobile Menu
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle Icon
+            const icon = mobileBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.querySelector('i').classList.remove('fa-times');
+                mobileBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Navbar Scroll Effect (Optional transparency change)
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
