@@ -111,10 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    // Throttle scroll event for performance
+    // Throttle scroll event for performance using requestAnimationFrame
+    // This ensures we only update once per frame, preventing excessive DOM updates
     let isScrolling = false;
     window.addEventListener('scroll', () => {
         if (!isScrolling) {
+            isScrolling = true;
             window.requestAnimationFrame(() => {
                 let current = '';
                 sections.forEach(section => {
@@ -134,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 isScrolling = false;
             });
-            isScrolling = true;
         }
     });
 });

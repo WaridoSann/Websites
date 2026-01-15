@@ -110,6 +110,7 @@ body {
 }
 
 /* Gallery Item */
+/* Transition is defined in CSS, hover effect uses Tailwind utility class (hover:scale-110) in HTML */
 .gallery-item img {
     transition: transform 0.5s ease;
 }
