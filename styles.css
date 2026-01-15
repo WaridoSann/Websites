@@ -50,6 +50,14 @@ body {
     background-attachment: fixed;
 }
 
+/* Responsive background image for mobile devices */
+@media (max-width: 768px) {
+    .hero-section {
+        background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        background-attachment: scroll;
+    }
+}
+
 /* Mobile Menu */
 .mobile-menu {
     max-height: 0;
@@ -150,10 +158,6 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero-section {
-        background-attachment: scroll;
-    }
-    
     .hero-content h1 {
         font-size: 2.5rem;
     }
