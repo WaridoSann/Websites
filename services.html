@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badaoui - Services Freelance</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- REPRISE DE TA CSS GLOBALE (Base) --- */
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', Verdana, sans-serif;
+            background: #f8f6f2;
+            color: #4B4843;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 32px 60px 0 60px;
+            background: transparent;
+            position: relative;
+            z-index: 10;
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: #4B4843;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+        .logo span { color: #EBCB3C; font-size: 2.4rem; font-family: inherit; }
+        nav { display: flex; gap: 2.5rem; flex: 1; justify-content: center; align-items: center; }
+        nav a {
+            color: #4B4843;
+            font-size: 1.18rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color .2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        nav a:hover { color: #7B6C5D; }
+        nav a.active-nav { color: #EBCB3C; font-weight:800; }
+        
+        .socials { display: flex; gap: 1rem; align-items: center; }
+        .socials img { width: 24px; height: 24px; filter: grayscale(40%); opacity: 0.85; transition: 0.2s; }
+        .socials a:hover img { filter: none; opacity: 1; transform: scale(1.12); }
+
+        /* BACKGROUND SHAPES */
+        .shapes { position: absolute; z-index: 0; width: 100vw; height: 100vh; top: 0; left: 0; pointer-events: none; overflow: hidden; }
+        .circle {
+            position: absolute; left: -240px; top: 360px; width: 520px; height: 520px;
+            background: radial-gradient(circle at 60% 60%, #EBCB3C 0%, #ede6db 90%);
+            border-radius: 50%; opacity: 0.37;
+        }
+        .bigcircle {
+            position: absolute; left: 42vw; top: 80px; width: 210px; height: 210px;
+            background: radial-gradient(circle at 30% 30%, #ede6db 25%, #EBCB3C 100%);
+            border-radius: 50%; opacity: 0.28;
+        }
+
+        /* --- CSS SPECIFIQUE PAGE SERVICES --- */
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 40px 60px 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            color: #4B4843;
+            margin-bottom: 10px;
+        }
+        h1 span { color: #EBCB3C; }
+
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* GRID SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(75,72,67,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #EBCB3C;
+            box-shadow: 0 15px 40px rgba(75,72,67,0.15);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(235, 203, 60, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: #EBCB3C;
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .service-card:hover .icon-box {
+            background: #EBCB3C;
+            color: #fff;
+        }
+
+        .service-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #4B4843;
+        }
+
+        .service-card p {
+            line-height: 1.6;
+            color: #7B6C5D;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f8f6f2;
+            border: 1px solid #e0dcd5;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #4B4843;
+        }
+
+        /* TERMINAL SECTION */
+        .terminal-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .terminal-wrapper {
+            width: 100%;
+            max-width: 800px;
+            background: #111;
+            border-radius: 14px;
+            padding: 24px 26px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            color: #EBCB3C;
+            font-family: monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-dot.red { background: #e34a4a; }
+        .terminal-dot.yellow { background: #e3b34a; }
+        .terminal-dot.green { background: #6be34a; }
+
+        .cmd { color: #fff; }
+        .path { color: #6be34a; }
+        .output { color: #bbb; margin-bottom: 15px; display: block; }
+        .success { color: #EBCB3C; }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .btn {
+            background: #4B4843; color: #fff; padding: 12px 30px;
+            font-size: 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 700;
+            border-radius: 7px; text-decoration: none; display: inline-block;
+            box-shadow: 0 5px 20px rgba(75,72,67,0.12); transition: 0.3s;
+        }
+        .btn:hover {
+            background: #EBCB3C; color: #4B4843; transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(75,72,67,0.17);
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav { flex-wrap: wrap; gap: 1rem; }
+            main { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BADAOUI<span>.</span></div>
+        <nav aria-label="Menu principal">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À Propos</a>
+            <a href="services.html" class="active-nav">Services</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="socials">
+            <a href="#" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" /></a>
+            <a href="#" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" /></a>
+        </div>
+    </header>
+
+    <div class="shapes" aria-hidden="true">
+        <div class="circle" style="top: 100px; left: -100px;"></div>
+        <div class="bigcircle" style="right: -50px; top: 400px; left: auto;"></div>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <h1>Mes <span>Expertises</span></h1>
+            <p class="subtitle">Des solutions techniques adaptées, du développement web à l'automatisation système.</p>
+        </div>
+
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="icon-box">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h2>Développement Web</h2>
+                <p>Création de sites web responsives et modernes. Transformation de maquettes en code propre et performant.</p>
+                <div class="tech-tags">
+                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">UI/UX Basics</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h2>Scripting & Automation</h2>
+                <p>Développement de scripts pour automatiser des tâches répétitives ou administrer des systèmes Linux.</p>
+                <div class="tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">Scraping</span>
+                    <span class="tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Sécurité & Réseau</h2>
+                <p>Analyse basique de vulnérabilités, configuration de réseaux et sécurisation d'environnements.</p>
+                <div class="tech-tags">
+                    <span class="tag">Wireshark</span>
+                    <span class="tag">Nmap</span>
+                    <span class="tag">Packet Tracer</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="terminal-section">
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div id="terminal-services">
+                    <div><span class="path">root@badaoui:~/services#</span> <span class="cmd">./list_skills.py</span></div>
+                    <div class="output">
+> Loading modules... OK
+> Checking Frontend capabilities...
+  [+] HTML/CSS Integration: Ready
+  [+] Responsive Design: Ready
+
+> Checking Backend/System capabilities...
+  [+] Python Scripting: Advanced
+  [+] Linux Administration: Intermediate
+  [+] Network Analysis: In Progress
+
+> Execution finished. Ready to work.
+                    </div>
+                    <div><span class="path">root@badaoui:~/services#</span> <span class="cmd blink">_</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p style="margin-bottom: 20px; font-weight: 500;">Un projet en tête ou une collaboration ?</p>
+            <a href="contact.html" class="btn">Me contacter</a>
+        </div>
+
+    </main>
+
+    <script>
+        // Petit effet de clignotement pour le curseur du terminal
+        const cursor = document.querySelector('.blink');
+        setInterval(() => {
+            cursor.style.opacity = (cursor.style.opacity === '0' ? '1' : '0');
+        }, 600);
+    </script>
+
+</body>
+</html>

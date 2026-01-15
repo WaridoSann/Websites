@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Detailing | Rénovation & Protection Céramique</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'race-red': '#E63946', // Le rouge qui claque
+                        'carbon-dark': '#111111', // Fond très sombre
+                        'carbon-light': '#1A1A1A', // Fond sections secondaires
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Petit effet "grille carbone" sur le fond */
+        .bg-carbon-pattern {
+            background-color: #111111;
+            background-image: radial-gradient(#222 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-carbon-dark text-gray-200 font-sans antialiased selection:bg-race-red selection:text-white">
+
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display font-black tracking-wider text-white italic">
+                APEX <span class="text-race-red">.</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-display font-bold uppercase text-sm tracking-widest">
+                <a href="#home" class="hover:text-race-red transition">Accueil</a>
+                <a href="#services" class="hover:text-race-red transition">Forfaits</a>
+                <a href="#gallery" class="hover:text-race-red transition">Réalisations</a>
+                <a href="#contact" class="bg-race-red text-white px-6 py-3 skew-x-[-10deg] hover:bg-red-700 transition transform hover:scale-105">
+                    <span class="skew-x-[10deg] inline-block">Prendre RDV</span>
+                </a>
+            </div>
+
+            <button id="mobile-btn" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-carbon-light border-t border-gray-800 absolute w-full left-0 top-full">
+            <div class="flex flex-col p-6 space-y-4 font-display font-bold uppercase tracking-widest">
+                <a href="#home" class="block hover:text-race-red">Accueil</a>
+                <a href="#services" class="block hover:text-race-red">Forfaits</a>
+                <a href="#gallery" class="block hover:text-race-red">Réalisations</a>
+                <a href="#contact" class="block text-race-red">Prendre RDV</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1611651338412-8403fa6e3599?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Supercar detailing" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-carbon-dark via-carbon-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 pt-20">
+            <span class="text-race-red font-display font-bold uppercase tracking-[0.2em] mb-4 block">Premium Auto Detailing</span>
+            <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight uppercase">
+                Redonnez vie <br>à votre <span class="text-transparent bg-clip-text bg-gradient-to-r from-race-red to-red-500">Machine</span>.
+            </h1>
+            <p class="text-gray-300 text-lg mb-10 max-w-xl border-l-4 border-race-red pl-6">
+                Centre expert en rénovation esthétique, polissage et protection céramique. Traitement haut de gamme pour véhicules d'exception.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#services" class="bg-race-red text-white px-8 py-4 font-display font-bold uppercase tracking-widest skew-x-[-10deg] hover:bg-red-700 transition">
+                    <span class="skew-x-[10deg] inline-block">Nos Offres</span>
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-4 font-display font-bold uppercase tracking-widest skew-x-[-10deg] hover:bg-white hover:text-carbon-dark transition">
+                    <span class="skew-x-[10deg] inline-block">Contact Rapide</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-carbon-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-black text-white uppercase mb-4">Nos <span class="text-race-red">Forfaits</span></h2>
+                <p class="text-gray-400 max-w-md mx-auto">Des formules adaptées à l'état de votre véhicule. Du simple rafraîchissement à la protection ultime.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-carbon-light border border-gray-800 p-8 hover:border-race-red transition-all duration-300 group">
+                    <h3 class="font-display font-black text-2xl text-white uppercase mb-2">Essentiel</h3>
+                    <p class="text-race-red font-display font-bold text-3xl mb-6">99€ <span class="text-sm text-gray-500 font-sans">/ à partir de</span></p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Lavage manuel extérieur</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Nettoyage jantes</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Aspiration habitacle</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Dépoussiérage tableau de bord</li>
+                        <li class="text-gray-600 line-through"><i class="fas fa-times mr-3"></i>Polissage carrosserie</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-transparent border border-race-red text-white py-3 font-display font-bold uppercase tracking-widest hover:bg-race-red transition">Choisir</a>
+                </div>
+
+                <div class="bg-carbon-light border-2 border-race-red p-8 relative transform md:-translate-y-4 shadow-2xl shadow-red-900/20">
+                    <span class="absolute top-0 right-0 bg-race-red text-white text-xs font-bold uppercase px-3 py-1 tracking-widest">Populaire</span>
+                    <h3 class="font-display font-black text-2xl text-white uppercase mb-2">Rénovation</h3>
+                    <p class="text-race-red font-display font-bold text-3xl mb-6">250€ <span class="text-sm text-gray-500 font-sans">/ à partir de</span></p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Formule "Essentiel" incluse</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Décontamination ferreuse</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Polissage "One Step" (brillance)</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Cire de protection (3 mois)</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Dressing pneus & plastiques</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-race-red text-white py-3 font-display font-bold uppercase tracking-widest hover:bg-red-700 transition">Choisir</a>
+                </div>
+
+                <div class="bg-carbon-light border border-gray-800 p-8 hover:border-race-red transition-all duration-300 group">
+                    <h3 class="font-display font-black text-2xl text-white uppercase mb-2">Ultimate Céramique</h3>
+                    <p class="text-race-red font-display font-bold text-3xl mb-6">Sur devis</p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Rénovation complète (Int/Ext)</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Polissage correctif (multi-passes)</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Traitement Céramique 9H (3 ans+)</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Protection jantes & étriers</li>
+                        <li><i class="fas fa-check text-race-red mr-3"></i>Traitement hydrophobe vitres</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-transparent border border-race-red text-white py-3 font-display font-bold uppercase tracking-widest hover:bg-race-red transition">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-carbon-dark">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-black text-white uppercase mb-4">Nos <span class="text-race-red">Réalisations</span></h2>
+                <p class="text-gray-400 max-w-md mx-auto">Le résultat parle de lui-même. Brillance extrême et protection durable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1600706432808-2523644c4521?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 1" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+                 <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1635773801766-b99d0911c359?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 2" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                     <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+                 <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1606577924008-33d305d28076?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 3" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                     <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+                 <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1494905998402-395d53845847?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 4" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                     <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+                 <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 5" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                     <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+                 <div class="h-72 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailing 6" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                     <div class="absolute inset-0 bg-race-red/0 transition duration-500 group-hover:bg-race-red/20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact" class="bg-carbon-light pt-20 pb-10 border-t border-gray-900">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <a href="#" class="text-3xl font-display font-black tracking-wider text-white italic mb-6 block">
+                    APEX <span class="text-race-red">.</span>
+                </a>
+                <p class="text-gray-500">Le spécialiste du detailing haute performance. Votre véhicule mérite l'excellence.</p>
+            </div>
+            <div>
+                 <h4 class="text-xl font-display font-bold text-white uppercase mb-6">Atelier</h4>
+                 <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt text-race-red w-8"></i> ZA Les Bolides, 13000 Marseille</li>
+                    <li class="flex items-center"><i class="fas fa-phone-alt text-race-red w-8"></i> 04 91 00 00 00</li>
+                    <li class="flex items-center"><i class="fas fa-envelope text-race-red w-8"></i> contact@apex-detailing.fr</li>
+                 </ul>
+            </div>
+            <div>
+                 <h4 class="text-xl font-display font-bold text-white uppercase mb-6">Horaires</h4>
+                 <ul class="space-y-2 text-gray-400">
+                    <li class="flex justify-between"><span>Lundi - Vendredi</span> <span class="text-white">09h - 18h</span></li>
+                    <li class="flex justify-between"><span>Samedi</span> <span class="text-white">09h - 14h</span></li>
+                    <li class="flex justify-between"><span class="text-race-red">Dimanche</span> <span class="text-race-red">Fermé (Circuit)</span></li>
+                 </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-900 pt-8 text-gray-600 text-sm font-display uppercase tracking-widest">
+            &copy; 2023 Apex Detailing. Performance & Brillance.
+        </div>
+    </footer>
+
+
+    <script>
+        // Menu Mobile
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Effet Navbar au scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('bg-carbon-dark/95', 'shadow-lg', 'py-2', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('bg-carbon-dark/95', 'shadow-lg', 'py-2', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
