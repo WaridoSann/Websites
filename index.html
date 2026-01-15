@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Art du Style - Salon de Coiffure de Luxe</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-lato">
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo">
+                <h1 class="text-2xl font-playfair font-bold text-gray-800">L'Art du Style</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="#accueil" class="nav-link text-gray-700 hover:text-gold transition">Accueil</a></li>
+                <li><a href="#services" class="nav-link text-gray-700 hover:text-gold transition">Services</a></li>
+                <li><a href="#galerie" class="nav-link text-gray-700 hover:text-gold transition">Galerie</a></li>
+                <li><a href="#contact" class="nav-link text-gray-700 hover:text-gold transition">Contact</a></li>
+                <li><a href="#contact" class="cta-btn bg-gold text-white px-6 py-2 rounded-full hover:bg-gold-dark transition">Prendre RDV</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <ul class="flex flex-col space-y-4 px-6 py-6">
+                <li><a href="#accueil" class="nav-link text-gray-700 hover:text-gold transition block">Accueil</a></li>
+                <li><a href="#services" class="nav-link text-gray-700 hover:text-gold transition block">Services</a></li>
+                <li><a href="#galerie" class="nav-link text-gray-700 hover:text-gold transition block">Galerie</a></li>
+                <li><a href="#contact" class="nav-link text-gray-700 hover:text-gold transition block">Contact</a></li>
+                <li><a href="#contact" class="cta-btn bg-gold text-white px-6 py-2 rounded-full hover:bg-gold-dark transition inline-block text-center">Prendre RDV</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section relative h-screen flex items-center justify-center text-white">
+        <div class="hero-overlay absolute inset-0 bg-black opacity-50"></div>
+        <div class="hero-content relative z-10 text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-4 animate-fade-in">L'Art du Style</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Votre élégance, notre passion</p>
+            <a href="#contact" class="cta-btn bg-gold text-white px-8 py-4 rounded-full text-lg hover:bg-gold-dark transition">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="about-content">
+                    <h2 class="text-4xl font-playfair font-bold text-gray-800 mb-6">Bienvenue chez L'Art du Style</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Depuis plus de 15 ans, L'Art du Style est le temple de la coiffure haut de gamme. 
+                        Notre équipe de stylistes experts transforme chaque visite en une expérience unique et personnalisée.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Nous combinons techniques traditionnelles et tendances modernes pour créer des styles 
+                        qui reflètent votre personnalité et subliment votre beauté naturelle.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Dans notre salon élégant et accueillant, chaque détail est pensé pour votre confort 
+                        et votre satisfaction. Laissez-vous choyer par nos experts passionnés.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop" 
+                         alt="Salon L'Art du Style" 
+                         class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-playfair font-bold text-gray-800 mb-4">Nos Services</h2>
+                <p class="text-gray-600">Des prestations d'excellence pour sublimer votre style</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Coupe Femme</h3>
+                    <p class="text-gray-600 mb-4">Coupe personnalisée avec shampooing et coiffage</p>
+                    <p class="text-gold text-2xl font-bold">45€ - 65€</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Coupe Homme</h3>
+                    <p class="text-gray-600 mb-4">Coupe moderne avec finitions impeccables</p>
+                    <p class="text-gold text-2xl font-bold">35€ - 45€</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Coloration</h3>
+                    <p class="text-gray-600 mb-4">Couleur sur mesure avec produits premium</p>
+                    <p class="text-gold text-2xl font-bold">70€ - 120€</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Soin Capillaire</h3>
+                    <p class="text-gray-600 mb-4">Traitement profond pour cheveux éclatants</p>
+                    <p class="text-gold text-2xl font-bold">40€ - 60€</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Taille de Barbe</h3>
+                    <p class="text-gray-600 mb-4">Sculpture et entretien de barbe</p>
+                    <p class="text-gold text-2xl font-bold">25€ - 35€</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-gray-800 mb-3">Coiffure Événement</h3>
+                    <p class="text-gray-600 mb-4">Coiffure sophistiquée pour occasions spéciales</p>
+                    <p class="text-gold text-2xl font-bold">80€ - 150€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-playfair font-bold text-gray-800 mb-4">Notre Galerie</h2>
+                <p class="text-gray-600">Découvrez nos créations et réalisations</p>
+            </div>
+            
+            <div class="gallery-grid grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&h=500&fit=crop" 
+                         alt="Coiffure 1" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&h=500&fit=crop" 
+                         alt="Coiffure 2" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&h=500&fit=crop" 
+                         alt="Coiffure 3" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&h=500&fit=crop" 
+                         alt="Coiffure 4" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&h=500&fit=crop" 
+                         alt="Coiffure 5" 
+                         class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&h=500&fit=crop" 
+                         alt="Coiffure 6" 
+                         class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-playfair font-bold text-gray-800 mb-4">Témoignages</h2>
+                <p class="text-gray-600">Ce que disent nos clients</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/80?img=1" 
+                             alt="Client 1" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sophie Martin</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Un service exceptionnel ! L'équipe est à l'écoute et le résultat dépasse toujours mes attentes. 
+                        Je ne pourrais plus aller ailleurs."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/80?img=12" 
+                             alt="Client 2" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Marc Dubois</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Professionnalisme et ambiance chaleureuse. Les coiffeurs sont de véritables artistes. 
+                        Je recommande vivement !"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/80?img=5" 
+                             alt="Client 3" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Isabelle Leroy</h4>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Le meilleur salon de la ville ! Chaque visite est un moment de détente et de transformation. 
+                        Merci pour votre talent !"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-dark-gray text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-6">Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
+                            <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-gold mr-3"></i>
+                            <p>+33 1 23 45 67 89</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-gold mr-3"></i>
+                            <p>contact@lartdustyle.fr</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Opening Hours -->
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-6">Horaires</h3>
+                    <div class="space-y-2">
+                        <p><span class="text-gold">Lundi - Vendredi:</span> 9h00 - 19h00</p>
+                        <p><span class="text-gold">Samedi:</span> 9h00 - 18h00</p>
+                        <p><span class="text-gold">Dimanche:</span> Fermé</p>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-2xl font-playfair font-bold mb-6">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon bg-gold w-12 h-12 rounded-full flex items-center justify-center hover:bg-gold-dark transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-gold w-12 h-12 rounded-full flex items-center justify-center hover:bg-gold-dark transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-gold w-12 h-12 rounded-full flex items-center justify-center hover:bg-gold-dark transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-gold w-12 h-12 rounded-full flex items-center justify-center hover:bg-gold-dark transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="mt-6 text-gray-400">© 2024 L'Art du Style. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
