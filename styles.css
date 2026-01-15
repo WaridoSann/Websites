@@ -1,0 +1,208 @@
+/* Custom CSS for L'Art du Style */
+
+:root {
+    --gold: #C9A961;
+    --gold-dark: #B8944E;
+    --dark-gray: #333333;
+}
+
+/* Font Families */
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-lato {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Custom Color Classes */
+.text-gold {
+    color: var(--gold);
+}
+
+.bg-gold {
+    background-color: var(--gold);
+}
+
+.bg-gold-dark {
+    background-color: var(--gold-dark);
+}
+
+.bg-dark-gray {
+    background-color: var(--dark-gray);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Navigation Links Hover Effect */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active Navigation Link */
+.active-link {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.active-link::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.cta-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Menu Transition */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.active {
+    max-height: 500px;
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Service Cards Hover Effect */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Gallery Items */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--gold);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Social Icons */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.125rem;
+    }
+}
+
+/* Header Scroll Effect */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Padding Fix for Fixed Header */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Loading Animation for Images */
+img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dark);
+}
